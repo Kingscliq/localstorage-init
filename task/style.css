@@ -5,7 +5,8 @@
 }
 body{
     background-color: #eee;;
-    font-family: sans-serif
+    font-family: sans-serif;
+    
 }
 .wrapper{
     width: 960px;
@@ -29,6 +30,7 @@ body{
     background-color: #f4f4f4;
     box-shadow: 3px 3px 10px #aaa;
     margin: 20px auto;
+    line-height: 2rem;
 }
 .image-div{
     display:grid;

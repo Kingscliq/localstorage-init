@@ -12,34 +12,35 @@
     <div class="wrapper">
         <div class="profile">
             <div class="name-info">
-               <h2> Lorem, ipsum </h2>
-               <small>Lorem ipsum dolor sit amet consectetur adipisicing.</small>
+               <h2> <span class="firstname">Lorem</span> <span class="lastname">ipsum</span> </h2>
+               <div><span style="font-size: 1.1rem; font-weight: 500;">Born: </span><span><small class="dob">56/09/XXXX.</small></span></div>
             </div>
             <div class="profile-pic">
-                <img src="images/image_1.jpg" height="100" width="100">
+                <img src="images/image_1.jpg" class="profile_pic" height="100" width="100">
             </div>
         </div>
         <section class="bio">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perferendis velit porro ex, est modi optio beatae similique culpa. Suscipit consequatur nisi repudiandae beatae dolore magni error, ad consequuntur non!
+            <h3>Biography</h3>
+            <p class="bio-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perferendis velit porro ex, est modi optio beatae similique culpa. Suscipit consequatur nisi repudiandae beatae dolore magni error, ad consequuntur non!</p>
         </section>
         <div class="image-div">
             <div class="image">
                 <figure>
-                    <img src="images/image_1.jpg">
+                    <img src="images/image_1.jpg" class="image-main">
                 </figure>
-                <figcaption>this is my profile image</figcaption>
+                <figcaption class="caption">this is my profile image</figcaption>
             </div>
             <div class="image">
                 <figure>
-                    <img src="images/image_1.jpg">
+                    <img src="images/image_1.jpg" class="image-main">
                 </figure>
-                <figcaption>this is my profile image</figcaption>
+                <figcaption class="caption">this is my profile image</figcaption>
             </div>
             <div class="image">
                 <figure>
-                    <img src="images/image_1.jpg">
+                    <img src="images/image_1.jpg" class="image-main">
                 </figure>
-                <figcaption>this is my profile image</figcaption>
+                <figcaption class="caption">this is my profile image</figcaption>
             </div>
         </div>
     </div>
@@ -48,14 +49,29 @@
 
     
     <script>
+
+// Getting Elements from the DOM and Assigning it to a varaible
+let firstname = document.querySelector('.firstname');
+let lastname = document.querySelector('.lastname');
+let profile_pic = document.querySelector('.profile_pic');
+let bio = document.querySelector('.bio-desc');
+let image = document.querySelector('.image-main');
+let caption = document.querySelector('.caption');
+let dob = document.querySelector('.dob')
+
 // creating a variable determiner to determine the page to be rendered
-let determiner = localStorage.getItem('number');
+let determiner = localStorage.getItem('mainprofile');
+let profile = JSON.parse(determiner);
+firstname.textContent = profile.firstName;
+lastname.textContent = profile.lastName;
+profile_pic.src = `images/image_${profile.id}.jpg`;
+bio.textContent = profile.bio;
+image.src = `images/image_${profile.id}.jpg`;
+caption.textContent = profile.caption;
+dob.textContent = profile.dob;
+console.log(profile)
 
-// getting the image from the Dom and passing it to a variable img
-let img =  document.querySelector('.img')
 
-// Giving it the image a src attribute to determine the image to display
-img.src =  `images/image_${determiner}.jpg`;
    
     </script>
 </body>

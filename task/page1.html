@@ -7,8 +7,7 @@
 </head>
 <body>
     <h1>This is page 1</h1>
-
-    <img class="img">
+ <img class="img">
         <button type="sumbit" id="button1" value='1'>Number 1</button>
         <button type="sumbit" id="button2" value="1">Number 2</button>
 
@@ -18,30 +17,91 @@
         const button1 = document.getElementById('button1');
         const button2 = document.getElementById('button2')
 
-// Adding a click event on button 1
-button1.addEventListener('click', function(e){
-    e.preventDefault() // preventing the default behaviour of the submit button
-    let number = '1'; // assigning the variable number to string value of 1
+    
 
-// checking if number is equal to 1
-    if(number === '1'){
-        localStorage.setItem('number', number);// Setting the value of 1 to local storage with a key and value
+// Adding a click event on button 1
+// button1.addEventListener('click', function(e){
+//     e.preventDefault() // preventing the default behaviour of the submit button
+//     let number = '1'; // assigning the variable number to string value of 1
+
+// // checking if number is equal to 1
+//     if(number === '1'){
+//         localStorage.setItem('number', number);// Setting the value of 1 to local storage with a key and value
         
-        // calling the window object to open on a new window and passing the page 2 url
-        window.open('page2.html', '_blank', 'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
-        c
+//         // calling the window object to open on a new window and passing the page 2 url
+//         window.open('page2.html', '_blank', 'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
+        
+//     }
+// })
+
+
+// // Calling Event for Number 2
+// button2.addEventListener('click', function(e){
+//     e.preventDefault()  // preventing the default behaviour of the submit button
+//     let number = '2';   // assigning the variable number to string value of 2
+
+
+//     if(number === '2'){
+
+        
+//         localStorage.setItem('number', number); // Setting the value of 1 to local storage with a key and value
+
+//        // calling the window object to open on a new window and passing the page 2 url
+//         window.open('page2.html', '_blank',  'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
+        
+//     }
+// })
+
+// Calling Event for Number 1
+button1.addEventListener('click', function(e){
+    e.preventDefault()  // preventing the default behaviour of the submit button
+
+    // creating the number object
+    let number = {
+        id: '1',
+        firstName: 'Sally',
+        lastName: ' Gardner',
+        dob: 'June 9th 1984',
+        bio: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam dicta dignissimos sit.lorem10Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, possimus.',
+        caption: 'Lorem ipsum dolor sit amet.',
+
+
+
+    };  
+
+// checking for number ID
+    if(number.id === '1'){
+
+        
+        localStorage.setItem('mainprofile', JSON.stringify(number)); // Setting the value of number object to local storage with a key and value
+
+       // calling the window object to open on a new window and passing the page 2 url
+        window.open('page2.html', '_blank',  'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
+        
     }
 })
-
-
 // Calling Event for Number 2
 button2.addEventListener('click', function(e){
     e.preventDefault()  // preventing the default behaviour of the submit button
-    let number = '2';   // assigning the variable number to string value of 2
+
+    // creating the number object
+    let number = {
+        id: '2',
+        firstName: 'KIngsley',
+        lastName: 'Ajaezo',
+        dob: 'June 9th 1990',
+        bio: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam dicta dignissimos sit.lorem10Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, possimus.',
+        caption: 'Lorem ipsum dolor sit amet.',
 
 
-    if(number === '2'){
-        localStorage.setItem('number', number); // Setting the value of 1 to local storage with a key and value
+
+    };  
+
+// checking for number ID
+    if(number.id === '2'){
+
+        
+        localStorage.setItem('mainprofile', JSON.stringify(number)); // Setting the value of number object to local storage with a key and value
 
        // calling the window object to open on a new window and passing the page 2 url
         window.open('page2.html', '_blank',  'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
