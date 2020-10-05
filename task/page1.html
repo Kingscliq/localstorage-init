@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <h1>This is page 1</h1>
+
+    <img class="img">
+        <button type="sumbit" id="button1" value='1'>Number 1</button>
+        <button type="sumbit" id="button2" value="1">Number 2</button>
+
+    <script>
+    
+       // grabbing the two buttons from the dom and passing them to variables button 1 and button 2 
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2')
+
+// Adding a click event on button 1
+button1.addEventListener('click', function(e){
+    e.preventDefault() // preventing the default behaviour of the submit button
+    let number = '1'; // assigning the variable number to string value of 1
+
+// checking if number is equal to 1
+    if(number === '1'){
+        localStorage.setItem('number', number);// Setting the value of 1 to local storage with a key and value
+        
+        // calling the window object to open on a new window and passing the page 2 url
+        window.open('page2.html', '_blank', 'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
+        c
+    }
+})
+
+
+// Calling Event for Number 2
+button2.addEventListener('click', function(e){
+    e.preventDefault()  // preventing the default behaviour of the submit button
+    let number = '2';   // assigning the variable number to string value of 2
+
+
+    if(number === '2'){
+        localStorage.setItem('number', number); // Setting the value of 1 to local storage with a key and value
+
+       // calling the window object to open on a new window and passing the page 2 url
+        window.open('page2.html', '_blank',  'location=yes,height=960,width=1200,scrollbars=yes,status=yes')
+        
+    }
+})
+        
+    </script>
+</body>
+</html>

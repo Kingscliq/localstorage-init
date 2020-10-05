@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+
+    <h1>This is Page 2</h1>
+    
+<img class="img">
+
+    
+    <script>
+// creating a variable determiner to determine the page to be rendered
+let determiner = localStorage.getItem('number');
+
+// getting the image from the Dom and passing it to a variable img
+let img =  document.querySelector('.img')
+
+// Giving it the image a src attribute to determine the image to display
+img.src =  `images/image_${determiner}.jpg`;
+   
+    </script>
+</body>
+</html>
+
